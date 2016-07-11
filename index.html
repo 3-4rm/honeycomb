@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>honeycomb v0.0.o</title>
+		<style type="text/css">
+			body{
+				background-color: azure;
+			}
+			#honeycomb-placeholder{
+				width: 975px;
+				margin-left:auto;
+				margin-right:auto;
+			}
+
+			.foreword,
+			.afterword{
+				margin-left: auto;
+			    margin-right: auto;
+			    text-align: center;
+			    font-family: arial;
+			    color: gray;
+			    font-size: 24px;
+			    width: 975px;
+			    margin-top: 50px;
+			    margin-bottom: 50px;
+			}
+
+		</style>
+		<link rel="stylesheet" type="text/css" href="honeycomb.css"/>
+		<script type="text/javascript">
+		var a = 5; var b = 6;
+			function generateDataSample(){
+				var result =[];
+				var imgIndex = 0;
+				for (var i = 0; i < 120; i++){
+
+					var item = {};
+					item.topText = i + " mi";
+					item.headerText = "Bicycle Race"
+					item.bodyText = "I want to ride my bicycle i want to ride my bike, I want to ride my bicycle I want to ride it where i like" + i;
+					item.buttonText = "Ride " + i + " mi";
+
+					item.backgroundImageUrl = "img/" + imgIndex + ".jpg";
+					imgIndex++; if (imgIndex>7){imgIndex = 0};
+
+					/*A CLOSURE IN A LOOP!!!:*/
+					item.cellBottomButtonFunction = (function(){var mi = i; return function(){alert("Riding for " + mi + " Miles!")}})();
+					result.push(item);
+				}
+				return result;			}
+		</script>
+	</head>
+	<body>
+		<div class="foreword">
+
+			<br/><b><u>To Someone Who Might Like...</u></b><br/><br/>
+			Remember <a href="http://www.d3js.org">d3js.org</a> front page? This one is something similar only sligthly better ;-)<br/>
+			Because... click on cell and see.
+		</div>
+
+		<div id="honeycomb-placeholder"></div>
+
+		<div class="afterword">
+			<b>It can be:</b><br/>
+			A menu on a website or contact list of your friends<br/>
+			and even will work on on <b>cell</b> phone.
+			There is no svg or clip-path here.<br/>
+			How that works? Inspect elements to find out :-).<br/><br/>
+			Thank you. Sergey.</div>
+		
+		<script type="text/javascript" src="honeycomb.js"></script>
+		<script type="text/javascript">
+			var insertHoneycombHere = document.getElementById("honeycomb-placeholder");
+			var sampleData = generateDataSample();
+			honeycomb.createHoneycomb(insertHoneycombHere, sampleData);
+		</script>
+	</body>
+</html>
