@@ -1,3 +1,5 @@
+[DEMO IS HERE]
+
 A proposition of what a carousel can be. Each slide on a carousel is a set of hexagon cells. Feels like a honeycomb.
 Motivation: Sometimes hexagon is better than rectangle.
 Dependancies: No dependancies required: only native JavaScript used.
@@ -19,4 +21,5 @@ cellBottomButtonFunction: function(){alert("function that launches on button cli
 
 Please don't judge too hard. This is a prototype of a proposition. So don't expect it to be stable, reliable or whatever else good it can be.
 
-
+[//]: #
+[DEMO IS HERE]: <https://3-4rm.github.io/honeycomb/>
